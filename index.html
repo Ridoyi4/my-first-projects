@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ridoy calculator</title>
+    <link rel="stylesheet" href="calculator.css">
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: blue;
+}
+.calculatorbody{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 400px;
+    height: 500px;
+}
+table{
+    background-color: rgb(0, 255, 68);
+    box-shadow: rgba(0,0,0,0.1) 0px 10px 50px;
+    border: 2px solid;
+    border-collapse: collapse;
+}
+td{
+    text-align: center;
+    color: blueviolet;
+    border: 2px solid rgb(247, 208, 208);
+}
+input[type="button"]{
+width: 90px;
+height: 80px;
+color:#fff;
+background-color: black;
+font-size: 2rem;
+border: none;
+cursor: pointer;
+transition: 0.2s ease-in-out;
+outline: none;
+border: none;
+}
+input[type="button"]:hover{
+    background-color:aqua ;
+    outline: none;
+}
+input[type="text"]{
+    width: 340px;
+    height: 80px;
+    text-align: right;
+    margin: 10px;
+    padding: 2px;
+    outline: none;
+    border: none;
+    font-size: 30px;
+}
+
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center; color: red;">created by Ridoy</h1>
+    <div class="calculatorbody">
+        <table>
+            
+            <tr>
+                <td colspan="4"> <input type="text" id="Myresult"> </td>
+            </tr>
+<tr>
+    <td><input type="button" value="c" onclick="DeletMe()"></td>
+    <td><input type="button" value="("  onclick="calculator('(')"></td>
+    <td><input type="button" value=")"  onclick="calculator(')')"></td>
+    <td><input type="button" value="@"  onclick="calculator('@')"></td>
+</tr>
+
+
+<tr>
+    <td><input type="button" value="7" onclick="calculator('7')"></td>
+    <td><input type="button" value="8"  onclick="calculator('8')"></td>
+    <td><input type="button" value="9"  onclick="calculator('9')"></td>
+    <td><input type="button" value="+"  onclick="calculator('+')"></td>
+</tr>
+
+<tr>
+    <td><input type="button" value="4" onclick="calculator('4')"></td>
+    <td><input type="button" value="5"  onclick="calculator('5')"></td>
+    <td><input type="button" value="6"  onclick="calculator('6')"></td>
+    <td><input type="button" value="-"  onclick="calculator('-')"></td>
+</tr>
+<tr>
+    <td><input type="button" value="1" onclick="calculator('1')"></td>
+    <td><input type="button" value="2"  onclick="calculator('2')"></td>
+    <td><input type="button" value="3"  onclick="calculator('3')"></td>
+    <td><input type="button" value="*"  onclick="calculator('*')"></td>
+</tr>
+
+<tr>
+    <td><input type="button" value="0" onclick="calculator('0')"></td>
+    <td><input type="button" value="."  onclick="calculator('.')"></td>
+    <td><input type="button" value="/"  onclick="calculator('/')"></td>
+    <td><input type="button" value="="  onclick="answer()"></td>
+</tr>
+
+
+        </table>
+    </div>
+    <script>
+        function DeletMe(){
+document.getElementById("Myresult").value=""
+        }
+        function calculator(newvalue){
+document.getElementById("Myresult").value +=newvalue;
+        }
+        function answer(){
+var a=document.getElementById("Myresult").value;
+var b=eval(a);
+document.getElementById("Myresult").value=b
+        }
+    </script>
+</body>
+</html>
